@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-local
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - data_postgres:/var/lib/postgresql/data
+    networks:
+      - icx-network
+
+networks:
+  icx-network:
+
+volumes:
+  data_postgres:
