@@ -246,8 +246,6 @@ exports.detail = async (req, res) => {
             username: true,
           },
         },
-        startAccessTime: true,
-        endAccessTime: true,
       },
     });
     return resSuccess({
@@ -559,8 +557,6 @@ exports.update = async (req, res) => {
     cardName: card_name,
     cardType: type,
     isTwoStepAuth,
-    startAccessTime,
-    endAccessTime,
   } = req.body;
 
   const updateCardData = {};
@@ -571,11 +567,6 @@ exports.update = async (req, res) => {
 
   if (type) {
     updateCardData.type = type;
-  }
-
-  if (startAccessTime && endAccessTime) {
-    updateCardData.startAccessTime = startAccessTime;
-    updateCardData.endAccessTime = endAccessTime;
   }
 
   try {
@@ -1040,8 +1031,6 @@ exports.adminModifyCard = async (req, res) => {
     cardType: type,
     isTwoStepAuth,
     cardBannedStatus,
-    startAccessTime,
-    endAccessTime,
   } = req.body;
 
   const updateCardData = {};
@@ -1052,11 +1041,6 @@ exports.adminModifyCard = async (req, res) => {
 
   if (type) {
     updateCardData.type = type;
-  }
-
-  if (startAccessTime && endAccessTime) {
-    updateCardData.startAccessTime = parseInt(startAccessTime);
-    updateCardData.endAccessTime = parseInt(endAccessTime);
   }
 
   try {

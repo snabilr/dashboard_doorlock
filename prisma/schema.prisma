@@ -53,23 +53,21 @@ model Profil {
 }
 
 model Card {
-  id              String          @id @default(cuid())
-  card_number     String          @unique
-  card_name       String?         @default("Kartu Saya")
-  pin             String?
-  card_status     CARD_STATUS     @default(UNREGISTER)
-  type            CARD_TYPE       @default(card_id)
-  banned          Boolean         @default(false)
-  isTwoStepAuth   Boolean         @default(true)
-  user            User?           @relation(fields: [userId], references: [id])
-  userId          String?
-  room            Room[]
-  records         Rooms_Records[]
-  roomRequest     Room_Request[]
-  createdAt       DateTime        @default(now())
-  updatedAt       DateTime        @updatedAt
-  startAccessTime Int             @default(7)
-  endAccessTime   Int             @default(18)
+  id            String          @id @default(cuid())
+  card_number   String          @unique
+  card_name     String?         @default("Kartu Saya")
+  pin           String?
+  card_status   CARD_STATUS     @default(UNREGISTER)
+  type          CARD_TYPE       @default(card_id)
+  banned        Boolean         @default(false)
+  isTwoStepAuth Boolean         @default(true)
+  user          User?           @relation(fields: [userId], references: [id])
+  userId        String?
+  room          Room[]
+  records       Rooms_Records[]
+  roomRequest   Room_Request[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
 }
 
 model Room {
@@ -85,6 +83,20 @@ model Room {
   device      Device?
   Building    Building?       @relation(fields: [buildingId], references: [id])
   buildingId  String?
+  sundayStartAccessTime    Int           @default(7)
+  sundayEndAccessTime      Int           @default(18)
+  mondayStartAccessTime    Int           @default(7)
+  mondayEndAccessTime      Int           @default(18)
+  tuesdayStartAccessTime   Int           @default(7)
+  tuesdayEndAccessTime     Int           @default(18)
+  wednesdayStartAccessTime Int           @default(7)
+  wednesdayEndAccessTime   Int           @default(18)
+  thursdayStartAccessTime  Int           @default(7)
+  thursdayEndAccessTime    Int           @default(18)
+  fridayStartAccessTime    Int           @default(7)
+  fridayEndAccessTime      Int           @default(18)
+  saturdayStartAccessTime  Int           @default(7)
+  saturdayEndAccessTime    Int           @default(18)
 }
 
 model Building {
@@ -97,19 +109,19 @@ model Building {
 }
 
 model Device {
-  id                String        @id @default(cuid())
-  device_id         String        @unique
-  pin               String        @default("$2b$10$93H.6AQWHWxlq4IQuT1cgu2oCi7OtgyTjYuWlgcq9beN2xPLSgFUW")
-  lastOnline        DateTime?
-  firmwareVersion   String?
-  deviceType        DEVICE_TYPE?  @default(SINGLE_NETWORK)
-  deviceLastGateway String?
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
-  roomId            String?       @unique
-  room              Room?         @relation(fields: [roomId], references: [id], onDelete: SetNull)
-  Gateway_Spot      Gateway_Spot? @relation(fields: [gateway_SpotId], references: [id])
-  gateway_SpotId    String?
+  id                       String        @id @default(cuid())
+  device_id                String        @unique
+  pin                      String        @default("$2b$10$93H.6AQWHWxlq4IQuT1cgu2oCi7OtgyTjYuWlgcq9beN2xPLSgFUW")
+  lastOnline               DateTime?
+  firmwareVersion          String?
+  deviceType               DEVICE_TYPE?  @default(SINGLE_NETWORK)
+  deviceLastGateway        String?
+  createdAt                DateTime      @default(now())
+  updatedAt                DateTime      @updatedAt
+  roomId                   String?       @unique
+  room                     Room?         @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  Gateway_Spot             Gateway_Spot? @relation(fields: [gateway_SpotId], references: [id])
+  gateway_SpotId           String?
 }
 
 model Gateway_Device {

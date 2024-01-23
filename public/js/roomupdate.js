@@ -8,6 +8,22 @@ const roomStatusForm = document.querySelector("#room-status");
 const updateBtn = document.querySelector("#create-button");
 const ruid = document.querySelector("#data-ruid");
 
+// access time form inputs
+const sundayStartAccessTimeForm = document.getElementById("sundayStartAccessTime");
+const sundayEndAccessTimeForm = document.getElementById("sundayEndAccessTime");
+const mondayStartAccessTimeForm = document.getElementById("mondayStartAccessTime");
+const mondayEndAccessTimeForm = document.getElementById("mondayEndAccessTime");
+const tuesdayStartAccessTimeForm = document.getElementById("tuesdayStartAccessTime");
+const tuesdayEndAccessTimeForm = document.getElementById("tuesdayEndAccessTime");
+const wednesdayStartAccessTimeForm = document.getElementById("wednesdayStartAccessTime");
+const wednesdayEndAccessTimeForm = document.getElementById("wednesdayEndAccessTime");
+const thursdayStartAccessTimeForm = document.getElementById("thursdayStartAccessTime");
+const thursdayEndAccessTimeForm = document.getElementById("thursdayEndAccessTime");
+const fridayStartAccessTimeForm = document.getElementById("fridayStartAccessTime");
+const fridayEndAccessTimeForm = document.getElementById("fridayEndAccessTime");
+const saturdayStartAccessTimeForm = document.getElementById("saturdayStartAccessTime");
+const saturdayEndAccessTimeForm = document.getElementById("saturdayEndAccessTime");
+
 const hardwareTemplate = (data, id) => {
     return `
         <div class="table-row d-flex align-items-center py-1 py-md-2 justify-content-between px-3 hardware--list-item" id="hw-${
@@ -81,6 +97,20 @@ updateBtn.addEventListener("click", async (e) => {
             isActive: roomStatusForm.checked,
             duid: duidForm.value,
             buildingId: document.querySelector("#buildingId").value,
+            sundayStartAccessTime: sundayStartAccessTimeForm.value,
+            sundayEndAccessTime: sundayEndAccessTimeForm.value,
+            mondayStartAccessTime: mondayStartAccessTimeForm.value,
+            mondayEndAccessTime: mondayEndAccessTimeForm.value,
+            tuesdayStartAccessTime: tuesdayStartAccessTimeForm.value,
+            tuesdayEndAccessTime: tuesdayEndAccessTimeForm.value,
+            wednesdayStartAccessTime: wednesdayStartAccessTimeForm.value,
+            wednesdayEndAccessTime: wednesdayEndAccessTimeForm.value,
+            thursdayStartAccessTime: thursdayStartAccessTimeForm.value,
+            thursdayEndAccessTime: thursdayEndAccessTimeForm.value,
+            fridayStartAccessTime: fridayStartAccessTimeForm.value,
+            fridayEndAccessTime: fridayEndAccessTimeForm.value,
+            saturdayStartAccessTime: saturdayStartAccessTimeForm.value,
+            saturdayEndAccessTime: saturdayEndAccessTimeForm.value,
         },
         successMsg: "Success update room",
         successBody: "Redirecting you to room list",

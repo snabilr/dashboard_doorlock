@@ -7,8 +7,6 @@ const cardNumber = cardIdContainer.getAttribute("data-card");
 const cardIcon = document.querySelector(".card-image");
 const username = document.getElementById("username");
 const saveBtn = document.querySelector("#save-change");
-const startAccessTime = document.getElementById("startAccessTime");
-const endAccessTime = document.getElementById("endAccessTime");
 
 // INFO: Basic Info Loader
 const basicInfoLoader = (data) => {
@@ -18,14 +16,10 @@ const basicInfoLoader = (data) => {
     type,
     isTwoStepAuth,
     banned,
-    startAccessTime,
-    endAccessTime,
   } = data;
 
   form.cardNumber.value = card_number;
   form.cardName.value = card_name;
-  form.startAccessTime.value = startAccessTime;
-  form.endAccessTime.value = endAccessTime;
   username.value = data?.user?.username || "NOT LINKED ⚠️";
 
   for (let index = 0; index < cardTypeForm.length; index++) {
@@ -57,8 +51,6 @@ saveBtn.addEventListener("click", async (e) => {
       cardType,
       isTwoStepAuth,
       cardBannedStatus: cardBannedStatusForm,
-      startAccessTime: startAccessTime.value,
-      endAccessTime: endAccessTime.value,
     },
     successMsg: "Succes updated card",
   });

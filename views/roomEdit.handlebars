@@ -35,6 +35,123 @@
             </div>
     </div>
 
+    <div class="mt-4">
+        <h4 class="fw-bold text-neutral-2">Daily Access Time</h4>
+
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Sunday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="sundayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.sundayStartAccessTime}}" id="sundayStartAccessTime" name="sundayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="sundayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.sundayEndAccessTime}}" id="sundayEndAccessTime" name="sundayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Monday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="mondayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.mondayStartAccessTime}}" id="mondayStartAccessTime" name="mondayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="mondayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.mondayEndAccessTime}}" id="mondayEndAccessTime" name="mondayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Tuesday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="tuesdayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.tuesdayStartAccessTime}}" id="tuesdayStartAccessTime" name="tuesdayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="tuesdayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.tuesdayEndAccessTime}}" id="tuesdayEndAccessTime" name="tuesdayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Wednesday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="wednesdayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.wednesdayStartAccessTime}}" id="wednesdayStartAccessTime" name="wednesdayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="wednesdayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.wednesdayEndAccessTime}}" id="wednesdayEndAccessTime" name="wednesdayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Thursday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="thursdayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.thursdayStartAccessTime}}" id="thursdayStartAccessTime" name="thursdayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="thursdayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.thursdayEndAccessTime}}" id="thursdayEndAccessTime" name="thursdayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Friday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="fridayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.fridayStartAccessTime}}" id="fridayStartAccessTime" name="fridayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="fridayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.fridayEndAccessTime}}" id="fridayEndAccessTime" name="fridayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label class="form-label fw-bold text-neutral-2 fs-5 pointer">Saturday</label>
+            </div>
+            <div class="col-3 d-flex align-items-center gap-5">
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="saturdayStartAccessTime">Start:</label>
+                    <input value="{{roomDetail.saturdayStartAccessTime}}" id="saturdayStartAccessTime" name="saturdayStartAccessTime" min="0" max="23" type="number">
+                </div>
+
+                <div class="d-flex gap-3">
+                    <label class="fw-bold text-neutral-2 fs-6 pointer text-sm" for="saturdayEndAccessTime">End:</label>
+                    <input value="{{roomDetail.saturdayEndAccessTime}}" id="saturdayEndAccessTime" name="saturdayEndAccessTime" min="0" max="23" type="number">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="form-group d-flex align-items-center justify-content-end mt-3 pointer" id="create-button">
         <p class="text-center bg-blue-4 text-neutral-5 pointer px-3 py-1 rounded-13" >Update</p>
     </div>

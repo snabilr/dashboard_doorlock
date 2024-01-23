@@ -218,8 +218,6 @@ exports.roomCheckIn = async (req, res) => {
             card_number: true,
             pin: true,
             userId: true,
-            startAccessTime: true,
-            endAccessTime: true,
           },
         },
       },
@@ -237,21 +235,7 @@ exports.roomCheckIn = async (req, res) => {
         detail: "Your pin is incorrect, try again",
         location: "Room Controller",
       });
-
-    const currentHour = new Date().getHours();
-
-    if (
-      !(
-        currentHour >= findedCard.startAccessTime &&
-        currentHour <= findedCard.endAccessTime
-      )
-    )
-      throw new ErrorException({
-        type: "card",
-        detail: "You don't have access at this time",
-        location: "Room Controller",
-      });
-
+      
     await prisma.rooms_Records.create({
       data: {
         Card: {

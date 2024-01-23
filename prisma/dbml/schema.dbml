@@ -56,8 +56,6 @@ Table Card {
   roomRequest Room_Request [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
-  startAccessTime Int [not null, default: 7]
-  endAccessTime Int [not null, default: 18]
 }
 
 Table Room {
@@ -73,6 +71,20 @@ Table Room {
   device Device
   Building Building
   buildingId String
+  sundayStartAccessTime Int [not null, default: 7]
+  sundayEndAccessTime Int [not null, default: 18]
+  mondayStartAccessTime Int [not null, default: 7]
+  mondayEndAccessTime Int [not null, default: 18]
+  tuesdayStartAccessTime Int [not null, default: 7]
+  tuesdayEndAccessTime Int [not null, default: 18]
+  wednesdayStartAccessTime Int [not null, default: 7]
+  wednesdayEndAccessTime Int [not null, default: 18]
+  thursdayStartAccessTime Int [not null, default: 7]
+  thursdayEndAccessTime Int [not null, default: 18]
+  fridayStartAccessTime Int [not null, default: 7]
+  fridayEndAccessTime Int [not null, default: 18]
+  saturdayStartAccessTime Int [not null, default: 7]
+  saturdayEndAccessTime Int [not null, default: 18]
 }
 
 Table Building {
