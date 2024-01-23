@@ -229,13 +229,104 @@ exports.roomCheckIn = async (req, res) => {
 
     const matchPin = hashChecker(pin, findedCard.pin);
 
+    const date = new Date();
+    const currentDay = date.getDay();
+    const currentHour = date.getHours();
+
+    switch (currentDay) {
+      case 0:
+        if (
+          !(currentHour >= room.sundayStartAccessTime &&
+          currentHour <= room.sundayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 1:
+        if (
+          !(currentHour >= room.mondayStartAccessTime &&
+          currentHour <= room.mondayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 2:
+        if (
+          !(currentHour >= room.tuesdayStartAccessTime &&
+          currentHour <= room.tuesdayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 3:
+        if (
+          !(currentHour >= room.wednesdayStartAccessTime &&
+          currentHour <= room.wednesdayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 4:
+        if (
+          !(currentHour >= room.thursdayStartAccessTime &&
+          currentHour <= room.thursdayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 5:
+        if (
+          !(currentHour >= room.fridayStartAccessTime &&
+          currentHour <= room.fridayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+      case 6:
+        if (
+          !(currentHour >= room.saturdayStartAccessTime &&
+          currentHour <= room.saturdayEndAccessTime)
+        ) {
+          throw new ErrorException({
+            type: "card",
+            detail: "Room is not opened yet, try again in another time",
+            location: "Room Controller",
+          });
+        }
+        break;
+    }
+
     if (!matchPin)
       throw new ErrorException({
         type: "card",
         detail: "Your pin is incorrect, try again",
         location: "Room Controller",
       });
-      
+
     await prisma.rooms_Records.create({
       data: {
         Card: {
@@ -272,6 +363,7 @@ exports.roomCheckIn = async (req, res) => {
         isSuccess: false,
       },
     });
+    console.log(error);
     return resError({
       res,
       title: "Failed to open the room",
